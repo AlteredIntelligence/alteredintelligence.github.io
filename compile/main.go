@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"os"
-	"strconv"
 	"strings"
 )
 
@@ -20,9 +19,8 @@ func reverse(input []string) []string {
 func main() {
 	files, _ := os.ReadDir("../img")
 	thisList := []string{}
-	for i, s := range files {
+	for _, s := range files {
 		if !strings.Contains(s.Name(), ".DS_Store") {
-			fmt.Println("Added " + strconv.Itoa(i))
 			thisList = append(thisList, "<img src=\"img/"+s.Name()+"\" class=\"img-fluid rounded\">\n")
 		}
 
