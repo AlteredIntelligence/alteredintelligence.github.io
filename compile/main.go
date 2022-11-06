@@ -6,16 +6,6 @@ import (
 	"strings"
 )
 
-func reverse(input []string) []string {
-	var output []string
-
-	for i := len(input) - 1; i >= 0; i-- {
-		output = append(output, input[i])
-	}
-
-	return output
-}
-
 func main() {
 	files, _ := os.ReadDir("../img")
 	thisList := []string{}
@@ -28,4 +18,14 @@ func main() {
 	reverseList := reverse(thisList)
 
 	fmt.Println(reverseList)
+}
+
+func reverse(input []string) []string {
+	var output []string
+
+	for i := len(input) - 1; i >= 0; i-- {
+		output = append(output, input[i])
+	}
+
+	return output
 }
